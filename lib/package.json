@@ -1,0 +1,11 @@
+{
+  "name": "react-native-enterprise-updater",
+  "version": "1.0.0",
+  "description": "Simple package to update enterprise apps on iOS written in React Native",
+  "main": "ReactNativeUpdater.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
