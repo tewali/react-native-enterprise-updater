@@ -13,6 +13,9 @@ export default {
         right: 10,
 
     },
+    body: {
+        alignItems: 'center'
+    },
     closeButton: {
         fontSize: 25,
         padding: 10
@@ -33,10 +36,14 @@ export default {
         paddingBottom: 15,
         backgroundColor: '#47525e',
         marginTop: 30,
-        alignSelf: 'stretch'
+        alignSelf: 'stretch',
+        alignItems: 'center',
+
     },
     buttonText: {
-        color: 'white'
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 17
     },
     logoStyle: {
         alignSelf: 'center',
@@ -49,9 +56,9 @@ export default {
     },
     innerContainer: {
         justifyContent: 'center',
-        alignItems: 'center',
         paddingLeft: 30,
-        paddingRight: 30
+        paddingRight: 30,
+        flex: 1
     },
         description: {
         marginTop: 20,

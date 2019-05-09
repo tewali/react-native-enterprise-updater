@@ -8,7 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import {UpdateChecker} from "react-native-enterprise-updater";
+import {UpdateChecker} from "./lib/ReactNativeEnterpriseUpdater";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -22,15 +22,15 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-
+        <UpdateChecker
+            url='https://push-founders.com/leapp'
+            currentVersion={0.1}
+            forceUpdate={false}
+        />
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <UpdateChecker
-            forceUpdate={true}
-            currentVersion={0.1}
-            url='https://push-founders.com/leapp'
-        />
+
       </View>
     );
   }

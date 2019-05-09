@@ -99,6 +99,7 @@ class UpdateChecker extends Component {
             <Modal visible={visible}>
                 <SafeAreaView style={styles.modal}>
                     {step === 0 && <View style={styles.innerContainer}>
+                        <View style={styles.body}>
                         {logo &&
                             <View style={styles.imageContainer}>
                                 <Image source={logo} style={styles.logoStyle} resizeMode='contain'/>
@@ -109,19 +110,32 @@ class UpdateChecker extends Component {
                         <Text style={styles.description}>
                             A new version of this app is available! Please update now to benefit from stability improvements and new features.
                         </Text>
+                        </View>
+
                         <TouchableOpacity text='Update now!' onPress={this.triggerUpdate.bind(this)}>
                             <View style={styles.button}><Text style={styles.buttonText}>Update now!</Text></View>
                         </TouchableOpacity>
+
                     </View> }
                     {step === 1 && <View style={styles.innerContainer}>
-                        <View style={styles.title}><ActivityIndicator size='large'/></View>
+                        <View style={styles.body}>
+                            <View style={styles.imageContainer}>
+                                <Image source={require('./assets/Shape.png')} style={styles.logoStyle} resizeMode='contain'/>
+                            </View>
+                            { /* <View style={styles.title}><ActivityIndicator size='large'/></View> */ }
                         <Text style={styles.title}>Preparing the update...</Text>
                         <Text style={styles.description}>Please confirm the installation in the dialog, that will show up any second.</Text>
-                    </View> }
+                        </View>
+                        </View> }
                     {step === 2 && <View style={styles.innerContainer}>
+                        <View style={styles.imageContainer}>
+                            <Image source={require('./assets/check-circle.2.png')} style={styles.logoStyle} resizeMode='contain'/>
+                        </View>
+                        <View style={styles.body}>
                         <Text style={styles.title}>Update is in progress!</Text>
                         <Text style={styles.description}>Please close the app now. The app will reinstall on your homescreen. Please wait for the installation to complete before opening the app again.</Text>
-                        {NativeUpdater &&
+                        </View>
+                            {NativeUpdater &&
                         <TouchableOpacity onPress={() => NativeUpdater.closeApp()}>
                             <View style={styles.button}><Text style={styles.buttonText}>Close now</Text></View>
                         </TouchableOpacity>}
