@@ -9,7 +9,7 @@ export default {
     },
     close: {
       position: 'absolute',
-        top: 0,
+        top: 10,
         right: 10,
 
     },
