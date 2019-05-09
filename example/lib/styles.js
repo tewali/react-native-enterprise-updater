@@ -47,8 +47,8 @@ export default {
     },
     logoStyle: {
         alignSelf: 'center',
-        width: window.width * 0.5,
-        height: window.width * 0.5
+        width: window.width * 0.4,
+        height: window.width * 0.4
     },
     imageContainer: {
         marginBottom: 30
