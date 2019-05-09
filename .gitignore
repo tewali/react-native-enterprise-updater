@@ -1,0 +1,6 @@
+.idea
+.DS_Store
+./node_modules
+./example/node_modules
+./lib/node_modules
+node_modules

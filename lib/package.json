@@ -2,10 +2,15 @@
   "name": "react-native-enterprise-updater",
   "version": "1.0.0",
   "description": "Simple package to update enterprise apps on iOS written in React Native",
-  "main": "ReactNativeUpdater.js",
+  "main": "ReactNativeEnterpriseUpdater.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.0.0",
+    "react-native": "0.50.0"
+  }
 }
