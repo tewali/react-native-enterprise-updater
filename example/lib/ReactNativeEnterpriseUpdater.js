@@ -9,7 +9,8 @@ import {
     AppState,
     ActivityIndicator,
     SafeAreaView,
-    NativeModules
+    NativeModules,
+    Platform
 } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
@@ -92,6 +93,10 @@ class UpdateChecker extends Component {
     }
 
     render() {
+        if (Platform.OS === 'android') {
+            return null;
+        }
+
         const {updateAvailable, step, visible} = this.state;
         const {logo, forceUpdate} = this.props;
         return !updateAvailable ?
