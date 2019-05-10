@@ -8,7 +8,11 @@ Install the NPM-package:
 npm i --save react-native-enterprise-updater
 ```
 
-More on setting up the native side will follow.
+Optional: Link the native dependencies. 
+ ```
+ react-native link react-native-enterprise-updater
+ ```
+ 
  
 ## Usage
 
