@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
+import localizationStrings from './localization';
 const NativeUpdater = NativeModules.NativeUpdater;
 
 class UpdateChecker extends Component {
@@ -98,51 +99,58 @@ class UpdateChecker extends Component {
         }
 
         const {updateAvailable, step, visible} = this.state;
-        const {logo, forceUpdate} = this.props;
+        const {logo, forceUpdate, locale='en'} = this.props;
+        const localization = localizationStrings[locale];
         return !updateAvailable ?
             null :
             <Modal visible={visible}>
                 <SafeAreaView style={styles.modal}>
                     {step === 0 && <View style={styles.innerContainer}>
                         <View style={styles.body}>
-                        {logo &&
-                            <View style={styles.imageContainer}>
-                                <Image source={logo} style={styles.logoStyle} resizeMode='contain'/>
-                            </View> }
 
-                      <Text style={styles.title}>{forceUpdate ? 'Mandatory ' : ''}Update Available</Text>
+                            <View style={styles.imageContainer}>
+                                <Image source={logo ? logo : require('./assets/Update.png')} style={styles.logoStyle} resizeMode='contain'/>
+                            </View>
+
+                      <Text style={styles.title}>{forceUpdate ? 'Mandatory ' : ''}{localization.updateAvailable}</Text>
                         <Text style={styles.version}>Version {this.newVersion}</Text>
                         <Text style={styles.description}>
-                            A new version of this app is available! Please update now to benefit from stability improvements and new features.
+                            {localization.updateDescription}
                         </Text>
                         </View>
 
-                        <TouchableOpacity text='Update now!' onPress={this.triggerUpdate.bind(this)}>
-                            <View style={styles.button}><Text style={styles.buttonText}>Update now!</Text></View>
+                        <TouchableOpacity onPress={this.triggerUpdate.bind(this)}>
+                            <View style={styles.button}><Text style={styles.buttonText}>{localization.updateNow}</Text></View>
                         </TouchableOpacity>
 
                     </View> }
                     {step === 1 && <View style={styles.innerContainer}>
                         <View style={styles.body}>
                             <View style={styles.imageContainer}>
-                                <Image source={require('./assets/Shape.png')} style={styles.logoStyle} resizeMode='contain'/>
+                                <Image source={require('./assets/InProgress.png')} style={styles.logoStyle} resizeMode='contain'/>
                             </View>
                             { /* <View style={styles.title}><ActivityIndicator size='large'/></View> */ }
-                        <Text style={styles.title}>Preparing the update...</Text>
-                        <Text style={styles.description}>Please confirm the installation in the dialog, that will show up any second.</Text>
+                        <Text style={styles.title}>{localization.preparing}</Text>
+                        <Text style={styles.description}>
+                            {localization.preparationDescription}
+                        </Text>
                         </View>
                         </View> }
                     {step === 2 && <View style={styles.innerContainer}>
                         <View style={styles.imageContainer}>
-                            <Image source={require('./assets/check-circle.2.png')} style={styles.logoStyle} resizeMode='contain'/>
+                            <Image source={require('./assets/Complete.png')} style={styles.logoStyle} resizeMode='contain'/>
                         </View>
                         <View style={styles.body}>
-                        <Text style={styles.title}>Update is in progress!</Text>
-                        <Text style={styles.description}>Please close the app now. The app will reinstall on your homescreen. Please wait for the installation to complete before opening the app again.</Text>
+                        <Text style={styles.title}>{localization.updateConfirmation}</Text>
+                        <Text style={styles.description}>
+                            {localization.updateCompleteDescription}
+                        </Text>
                         </View>
                             {NativeUpdater &&
                         <TouchableOpacity onPress={() => NativeUpdater.closeApp()}>
-                            <View style={styles.button}><Text style={styles.buttonText}>Close now</Text></View>
+                            <View style={styles.button}><Text style={styles.buttonText}>
+                                {localization.closeNow}
+                            </Text></View>
                         </TouchableOpacity>}
                     </View> }
                     {!forceUpdate && <SafeAreaView style={styles.close}>
@@ -164,7 +172,8 @@ UpdateChecker.propTypes = {
   url: PropTypes.string,
   forceUpdate: PropTypes.bool,
   logo: PropTypes.any,
-  currentVersion: PropTypes.number
+  currentVersion: PropTypes.number,
+  locale: PropTypes.string
 };
 
 export {UpdateChecker, isNewVersionAvailable}

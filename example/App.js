@@ -23,9 +23,10 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <UpdateChecker
-            url='https://push-founders.com/leapp'
+            url='https://pushcap-app.com/PWL'
             currentVersion={0.1}
             forceUpdate={false}
+            logo={require('./lib/assets/Update.png')}
         />
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>

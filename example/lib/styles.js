@@ -9,7 +9,7 @@ export default {
     },
     close: {
       position: 'absolute',
-        top: 10,
+        top: 25,
         right: 10,
 
     },
@@ -18,7 +18,7 @@ export default {
     },
     closeButton: {
         fontSize: 25,
-        padding: 10
+        padding: 15
     },
     version: {
       color: '#787778',
