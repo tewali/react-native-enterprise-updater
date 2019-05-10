@@ -26,6 +26,7 @@ export default class App extends Component<Props> {
             url='https://pushcap-app.com/PWL'
             currentVersion={0.1}
             forceUpdate={false}
+            locale={'en'}
             logo={require('./lib/assets/Update.png')}
         />
         <Text style={styles.welcome}>Welcome to React Native!</Text>
