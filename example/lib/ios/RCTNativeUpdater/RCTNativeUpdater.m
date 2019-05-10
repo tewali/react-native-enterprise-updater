@@ -1,4 +1,4 @@
-#import "NativeUpdater.h"
+#import "RCTNativeUpdater.h"
 
 @implementation NativeUpdater
 

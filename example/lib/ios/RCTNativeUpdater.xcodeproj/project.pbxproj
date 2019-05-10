@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B6017042284518B00375F87 /* NativeUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6017032284518B00375F87 /* NativeUpdater.m */; };
-		1B6017052284518B00375F87 /* NativeUpdater.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B6017022284518B00375F87 /* NativeUpdater.h */; };
+		1B6017042284518B00375F87 /* RCTNativeUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6017032284518B00375F87 /* RCTNativeUpdater.m */; };
+		1B6017052284518B00375F87 /* RCTNativeUpdater.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B6017022284518B00375F87 /* RCTNativeUpdater.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,16 +18,16 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				1B6017052284518B00375F87 /* NativeUpdater.h in CopyFiles */,
+				1B6017052284518B00375F87 /* RCTNativeUpdater.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1B6016FF2284518B00375F87 /* libNativeUpdater.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNativeUpdater.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B6017022284518B00375F87 /* NativeUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NativeUpdater.h; sourceTree = "<group>"; };
-		1B6017032284518B00375F87 /* NativeUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeUpdater.m; sourceTree = "<group>"; };
+		1B6016FF2284518B00375F87 /* libRCTNativeUpdater.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTNativeUpdater.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B6017022284518B00375F87 /* RCTNativeUpdater.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNativeUpdater.h; sourceTree = "<group>"; };
+		1B6017032284518B00375F87 /* RCTNativeUpdater.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTNativeUpdater.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +44,7 @@
 		1B6016F62284518B00375F87 = {
 			isa = PBXGroup;
 			children = (
-				1B6017012284518B00375F87 /* NativeUpdater */,
+				1B6017012284518B00375F87 /* RCTNativeUpdater */,
 				1B6017002284518B00375F87 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,26 +52,26 @@
 		1B6017002284518B00375F87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B6016FF2284518B00375F87 /* libNativeUpdater.a */,
+				1B6016FF2284518B00375F87 /* libRCTNativeUpdater.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1B6017012284518B00375F87 /* NativeUpdater */ = {
+		1B6017012284518B00375F87 /* RCTNativeUpdater */ = {
 			isa = PBXGroup;
 			children = (
-				1B6017022284518B00375F87 /* NativeUpdater.h */,
-				1B6017032284518B00375F87 /* NativeUpdater.m */,
+				1B6017022284518B00375F87 /* RCTNativeUpdater.h */,
+				1B6017032284518B00375F87 /* RCTNativeUpdater.m */,
 			);
-			path = NativeUpdater;
+			path = RCTNativeUpdater;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1B6016FE2284518B00375F87 /* NativeUpdater */ = {
+		1B6016FE2284518B00375F87 /* RCTNativeUpdater */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B6017082284518B00375F87 /* Build configuration list for PBXNativeTarget "NativeUpdater" */;
+			buildConfigurationList = 1B6017082284518B00375F87 /* Build configuration list for PBXNativeTarget "RCTNativeUpdater" */;
 			buildPhases = (
 				1B6016FB2284518B00375F87 /* Sources */,
 				1B6016FC2284518B00375F87 /* Frameworks */,
@@ -81,9 +81,9 @@
 			);
 			dependencies = (
 			);
-			name = NativeUpdater;
+			name = RCTNativeUpdater;
 			productName = NativeUpdater;
-			productReference = 1B6016FF2284518B00375F87 /* libNativeUpdater.a */;
+			productReference = 1B6016FF2284518B00375F87 /* libRCTNativeUpdater.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -100,7 +100,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1B6016FA2284518B00375F87 /* Build configuration list for PBXProject "NativeUpdater" */;
+			buildConfigurationList = 1B6016FA2284518B00375F87 /* Build configuration list for PBXProject "RCTNativeUpdater" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1B6016FE2284518B00375F87 /* NativeUpdater */,
+				1B6016FE2284518B00375F87 /* RCTNativeUpdater */,
 			);
 		};
 /* End PBXProject section */
@@ -122,7 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B6017042284518B00375F87 /* NativeUpdater.m in Sources */,
+				1B6017042284518B00375F87 /* RCTNativeUpdater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +266,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1B6016FA2284518B00375F87 /* Build configuration list for PBXProject "NativeUpdater" */ = {
+		1B6016FA2284518B00375F87 /* Build configuration list for PBXProject "RCTNativeUpdater" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B6017062284518B00375F87 /* Debug */,
@@ -275,7 +275,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B6017082284518B00375F87 /* Build configuration list for PBXNativeTarget "NativeUpdater" */ = {
+		1B6017082284518B00375F87 /* Build configuration list for PBXNativeTarget "RCTNativeUpdater" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B6017092284518B00375F87 /* Debug */,

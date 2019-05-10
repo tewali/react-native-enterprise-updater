@@ -23,8 +23,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		1B3C98EC2285EAA400BE88E0 /* libNativeUpdater.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3C98EB2285EA9900BE88E0 /* libNativeUpdater.a */; };
-		1B3C98ED2285EABD00BE88E0 /* libNativeUpdater.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3C98EB2285EA9900BE88E0 /* libNativeUpdater.a */; };
+		1B3C99262285EC4B00BE88E0 /* libRCTNativeUpdater.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3C99252285EC4400BE88E0 /* libRCTNativeUpdater.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -108,12 +107,12 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
-		1B3C98EA2285EA9900BE88E0 /* PBXContainerItemProxy */ = {
+		1B3C99242285EC4400BE88E0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1B3C98E62285EA9900BE88E0 /* NativeUpdater.xcodeproj */;
+			containerPortal = 1B3C99202285EC4400BE88E0 /* RCTNativeUpdater.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1B6016FF2284518B00375F87;
-			remoteInfo = NativeUpdater;
+			remoteInfo = RCTNativeUpdater;
 		};
 		1B4FCE0122848F5E00D323E2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -347,7 +346,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = example/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = example/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		1B3C98E62285EA9900BE88E0 /* NativeUpdater.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NativeUpdater.xcodeproj; path = ../lib/ios/NativeUpdater.xcodeproj; sourceTree = "<group>"; };
+		1B3C99202285EC4400BE88E0 /* RCTNativeUpdater.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTNativeUpdater.xcodeproj; path = ../lib/ios/RCTNativeUpdater.xcodeproj; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* example-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* example-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "example-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -364,7 +363,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B3C98EC2285EAA400BE88E0 /* libNativeUpdater.a in Frameworks */,
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +371,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B3C98ED2285EABD00BE88E0 /* libNativeUpdater.a in Frameworks */,
+				1B3C99262285EC4B00BE88E0 /* libRCTNativeUpdater.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
@@ -533,10 +531,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1B3C98E72285EA9900BE88E0 /* Products */ = {
+		1B3C99212285EC4400BE88E0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B3C98EB2285EA9900BE88E0 /* libNativeUpdater.a */,
+				1B3C99252285EC4400BE88E0 /* libRCTNativeUpdater.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -572,7 +570,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				1B3C98E62285EA9900BE88E0 /* NativeUpdater.xcodeproj */,
+				1B3C99202285EC4400BE88E0 /* RCTNativeUpdater.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -749,10 +747,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 1B3C98E72285EA9900BE88E0 /* Products */;
-					ProjectRef = 1B3C98E62285EA9900BE88E0 /* NativeUpdater.xcodeproj */;
-				},
-				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -775,6 +769,10 @@
 				{
 					ProductGroup = 78C398B11ACF4ADC00677621 /* Products */;
 					ProjectRef = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
+				},
+				{
+					ProductGroup = 1B3C99212285EC4400BE88E0 /* Products */;
+					ProjectRef = 1B3C99202285EC4400BE88E0 /* RCTNativeUpdater.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302D41ABCB9D200DB3ED1 /* Products */;
@@ -868,11 +866,11 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1B3C98EB2285EA9900BE88E0 /* libNativeUpdater.a */ = {
+		1B3C99252285EC4400BE88E0 /* libRCTNativeUpdater.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libNativeUpdater.a;
-			remoteRef = 1B3C98EA2285EA9900BE88E0 /* PBXContainerItemProxy */;
+			path = libRCTNativeUpdater.a;
+			remoteRef = 1B3C99242285EC4400BE88E0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		1B4FCE0222848F5E00D323E2 /* libjsi.a */ = {

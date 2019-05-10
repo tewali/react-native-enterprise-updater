@@ -7,7 +7,7 @@ export default {
         preparationDescription: 'Bestätigen Sie bitte die Installation des Updates in dem Fenster, das gleich erscheinen wird.',
         updateConfirmation: 'Das Update wird durchgeführt!',
         updateCompleteDescription: 'Bitte schließen Sie diese App jetzt. Die App wird auf Ihrem Homescreen neu installiert. Bitte warten Sie, bis diese Installation abgeschlossen ist, bevor Sie die App erneut öffnen.',
-        closeNow: 'Close now'
+        closeNow: 'Jetzt schließen'
     },
     en: {
         updateAvailable: 'Update Available',
@@ -17,6 +17,6 @@ export default {
         preparationDescription: 'Please confirm the installation in the dialog that will show up any second.',
         updateConfirmation: 'Update is in progress!',
         updateCompleteDescription: 'Please close the app now. The app will reinstall on your homescreen. Please wait for the installation to complete before opening the app again.',
-        closeNow: 'Jetzt schließen'
+        closeNow: 'Close now'
     }
 }
