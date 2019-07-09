@@ -62,7 +62,7 @@ class UpdateChecker extends Component {
     }
 
     _handleAppStateChange(nextAppState) {
-        if (this.state.step === 1 && this.appState === 'inactive' && nextAppState === 'active') {
+        if (this.state.step === 1 && (this.appState === 'inactive' || this.appState === 'background') && nextAppState === 'active') {
             this.dialogShown();
         }
         this.appState = nextAppState;
