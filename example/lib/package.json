@@ -1,6 +1,6 @@
 {
   "name": "react-native-enterprise-updater",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple package to update enterprise apps on iOS written in React Native",
   "main": "ReactNativeEnterpriseUpdater.js",
   "scripts": {
