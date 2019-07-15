@@ -19,7 +19,7 @@ const NativeUpdater = NativeModules.NativeUpdater;
 
 class UpdateChecker extends Component {
     state = {
-        updateAvailable: 0,
+        updateAvailable: false,
         step: 0,
         visible: true
     };
@@ -27,45 +27,39 @@ class UpdateChecker extends Component {
     currentVersion: null;
     appState = 'active';
 
-    async checkVersion() {
-        const {url} = this.props;
-        let response = await fetch(
-            url + '/manifest.plist',
-        );
-        let responseJson = await response.text();
-        let index = responseJson.indexOf('bundle-version');
-        responseJson = responseJson.substr(index);
-        index = responseJson.indexOf('<string>');
-        responseJson = responseJson.substr(index + 8);
-        index = responseJson.indexOf('<');
-        responseJson = responseJson.substr(0, index);
-        this.newVersion = responseJson;
-        return this.newVersion > this.currentVersion;
-    }
-
     constructor(props) {
         super(props);
-        this._handleAppStateChange = this._handleAppStateChange.bind(this);
+        this.handleAppStateChange = this.handleAppStateChange.bind(this);
     }
 
     componentDidMount() {
-        AppState.addEventListener('change', this._handleAppStateChange);
-        this.getCurrentVersion().then(() => {
-            this.checkVersion().then((response) => {
-                this.setState({...this.state, updateAvailable:response})
-            });
-        });
+        AppState.addEventListener('change', this.handleAppStateChange);
+        this.checkUpdateAvailable();
     }
 
     componentWillUnmount() {
-        AppState.removeEventListener('change', this._handleAppStateChange);
+        AppState.removeEventListener('change', this.handleAppStateChange);
     }
 
-    _handleAppStateChange(nextAppState) {
-        if (this.state.step === 1 && (this.appState === 'inactive' || this.appState === 'background') && nextAppState === 'active') {
-            this.dialogShown();
+    handleAppStateChange(nextAppState) {
+        // Here we just came back from installing the app, so we can show the 'complete' screen
+        if (this.state.step === 1 && this.appState === 'inactive' && nextAppState === 'active') {
+            this.setState({ ...this.state, step: 2 });
         }
+        // Here we do an update check intermediately in case we just activated the app again
+        else if (this.state.step === 0 && (this.appState === 'inactive' || this.appState === 'background') && nextAppState === 'active') {
+            this.checkUpdateAvailable();
+        }
+
         this.appState = nextAppState;
+    }
+
+    checkUpdateAvailable() {
+        this.getCurrentVersion().then(() => {
+            this.checkVersion().then((isAvailable) => {
+                this.setState({ ...this.state, updateAvailable: isAvailable, visible: isAvailable })
+            });
+        });
     }
 
     async getCurrentVersion() {
@@ -79,25 +73,32 @@ class UpdateChecker extends Component {
         }
     }
 
+    async checkVersion() {
+        const {url} = this.props;
+        let response = await fetch(
+          url + '/manifest.plist',
+        );
+        let responseJson = await response.text();
+        let index = responseJson.indexOf('bundle-version');
+        responseJson = responseJson.substr(index);
+        index = responseJson.indexOf('<string>');
+        responseJson = responseJson.substr(index + 8);
+        index = responseJson.indexOf('<');
+        responseJson = responseJson.substr(0, index);
+        this.newVersion = responseJson;
+        return this.newVersion > this.currentVersion;
+    }
+
     triggerUpdate() {
-        this.setState({...this.state, step: 1});
+        this.setState({ ...this.state, step: 1 });
         const {url} = this.props;
         Linking.openURL('itms-services://?action=download-manifest&url=' + url + '/manifest.plist');
-    }
-
-    dialogShown() {
-        this.setState({...this.state, step: 2});
-    }
-
-    hideModal() {
-        this.setState({...this.state, visible: false});
     }
 
     render() {
         if (Platform.OS === 'android') {
             return null;
         }
-
         const {updateAvailable, step, visible} = this.state;
         const {logo, forceUpdate, locale='en'} = this.props;
         const localization = localizationStrings[locale];
@@ -154,7 +155,7 @@ class UpdateChecker extends Component {
                         </TouchableOpacity>}
                     </View> }
                     {!forceUpdate && <SafeAreaView style={styles.close}>
-                            <TouchableOpacity onPress={this.hideModal.bind(this)}>
+                            <TouchableOpacity onPress={() => this.setState({ ...this.state, visible: false })}>
                             <Text style={styles.closeButton}>x</Text>
                             </TouchableOpacity>
                             </SafeAreaView> }
@@ -164,9 +165,7 @@ class UpdateChecker extends Component {
     }
 }
 
-const isNewVersionAvailable = (currentVersion) => {
-
-};
+const isNewVersionAvailable = (currentVersion) => {};
 
 UpdateChecker.propTypes = {
   url: PropTypes.string,
@@ -177,3 +176,4 @@ UpdateChecker.propTypes = {
 };
 
 export {UpdateChecker, isNewVersionAvailable}
+
